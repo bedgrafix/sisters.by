@@ -1,0 +1,122 @@
+include helpers/bemto
+include helpers/variables
+include helpers/mixins
+
+-bemto_settings_prefix = 'b-'
+
+doctype html
+html
+	head
+		title personal-area
+		include inc/head
+	body(class="p-personal-area")
+		include partials/top-header
+
+		.l-common-wrap
+			+mobile-menu
+			.l-content-wrap
+				.l-page
+					include partials/header
+					.l-container
+						+breadcrumb
+						+b('span').title-1.black.pdn-top Личный кабинет
+						+b('nav').mob-nav.tabs
+							+e('').wrap
+								+e('a')(href='#').title-link Избранное
+								+e('a').btn-toggle
+								+e('').dropdown
+									+e('').inner-wrap
+										+e('a').inner-title Личные данные
+									+e('').inner-wrap
+										+e('a').inner-title История заказов
+									+e('').inner-wrap.current
+										+e('a').inner-title Избранное
+						+b('').basket-table.favorite
+							+e('').row-title
+								+e('').cell
+									span<span class='amount'>3</span> товара
+								+e('').cell
+									span Товар
+								+e('').cell
+									span Доступные размеры
+								+e('').cell
+									span Цена
+							+e('').row
+								+e('').cell
+									+e('img')(src='http://placehold.it/76x76').img
+								+e('').cell
+									+e('').product-desc
+										+e('span').desc-text Платье
+										+e('span').desc-text Артикул: Zit 16 26823
+										+e('span').desc-text Размер: М <a href='#' class='b-link underline'>Изменить <span>размер</span></a>
+										+e('span').desc-text Цвет: серый
+										+e('span').desc-text.desktop-hide Доступные размеры: XS, S, M, L, XL, XXL
+								+e('').cell
+									+e('span').desc-text XS, S, M, L, XL, XXL
+								+e('').cell
+									+e('span').price 95.80
+										span.caption Цена:
+									+b('a').btn.basket.basket-gray Добавить в корзину
+									+e('a').remove
+							+e('').row
+								+e('').cell
+									+e('img')(src='http://placehold.it/76x76').img
+								+e('').cell
+									+e('').product-desc
+										+e('span').desc-text Платье
+										+e('span').desc-text Артикул: Zit 16 26823
+										+e('span').desc-text Размер: М <a href='#' class='b-link underline'>Изменить <span>размер</span></a>
+										+e('span').desc-text Цвет: серый
+										+e('span').desc-text.desktop-hide Доступные размеры: XS, S, M, L, XL, XXL
+								+e('').cell
+									+e('span').desc-text XS, S, M, L, XL, XXL
+								+e('').cell
+									+e('span').price 95.80
+										span.caption Цена:
+									+b('a').btn.basket.basket-gray Добавить в корзину
+									+e('a').remove
+							+e('').row
+								+e('').cell
+									+e('img')(src='http://placehold.it/76x76').img
+								+e('').cell
+									+e('').product-desc
+										+e('span').desc-text Платье
+										+e('span').desc-text Артикул: Zit 16 26823
+										+e('span').desc-text Размер: М <a href='#' class='b-link underline'>Изменить <span>размер</span></a>
+										+e('span').desc-text Цвет: серый
+										+e('span').desc-text.desktop-hide Доступные размеры: XS, S, M, L, XL, XXL
+								+e('').cell
+									+e('span').desc-text XS, S, M, L, XL, XXL
+								+e('').cell
+									+e('span').price 95.80
+										span.discount 111.20=
+										span.caption Цена:
+									+b('a').btn.basket.basket-gray Добавить в корзину
+									+e('a').remove
+							+e('').row
+								+e('').cell
+									+e('img')(src='http://placehold.it/76x76').img
+								+e('').cell
+									+e('').product-desc
+										+e('span').desc-text Платье
+										+e('span').desc-text Артикул: Zit 16 26823
+										+e('span').desc-text Размер: М <a href='#' class='b-link underline'>Изменить <span>размер</span></a>
+										+e('span').desc-text Цвет: серый
+										+e('span').desc-text.desktop-hide Доступные размеры: XS, S, M, L, XL, XXL
+								+e('').cell
+									+e('span').desc-text XS, S, M, L, XL, XXL
+								+e('').cell
+									+e('span').price 95.80
+										span.caption Цена:
+									+b('a').btn.basket.basket-gray Добавить в корзину
+									+e('a').remove
+						+b('').products-loader
+							span
+							span
+							span
+							span
+								
+
+		include partials/footer
+		include inc/vendor-scripts
+		script(src="js/client.min.js")

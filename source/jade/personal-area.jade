@@ -1,0 +1,73 @@
+include helpers/bemto
+include helpers/variables
+include helpers/mixins
+
+-bemto_settings_prefix = 'b-'
+
+doctype html
+html
+	head
+		title personal-area
+		include inc/head
+	body(class="p-personal-area")
+		include partials/top-header
+
+		.l-common-wrap
+			+mobile-menu
+			.l-content-wrap
+				.l-page
+					include partials/header
+					.l-container
+						+breadcrumb
+						+b('span').title-1.black.pdn-top Личный кабинет
+						+b('nav').mob-nav.tabs
+							+e('').wrap
+								+e('a')(href='#').title-link Личные данные
+								+e('a').btn-toggle
+								+e('').dropdown
+									+e('').inner-wrap.current
+										+e('a').inner-title Личные данные
+									+e('').inner-wrap
+										+e('a').inner-title История заказов
+									+e('').inner-wrap
+										+e('a').inner-title Избранное
+						+b('').personal-area
+							+e('').cell
+								+b('span').title-1 Личные данные
+								+b('form').form.personal-data
+									+e('').table
+										+e('').cell
+											+b('input')(type='text' placeholder='Фамилия, имя, отчество').input-text
+											+b('input')(type='text' placeholder='Контактный телефон').input-text
+											+b('input')(type='text' placeholder='Область').input-text
+											+b('input')(type='text' placeholder='Почтовый индекс').input-text
+											+b('input')(type='text' placeholder='Город').input-text
+										+e('').cell
+											+b('input')(type='text' placeholder='Улица').input-text
+											+e('').row
+												+e('').one-fift
+													+b('input')(type='text' placeholder='Дом').input-text
+												+e('').one-fift
+													+b('input')(type='text' placeholder='Корпус').input-text
+												+e('').one-fift
+													+b('input')(type='text' placeholder='Квартира').input-text
+												+e('').one-fift
+													+b('input')(type='text' placeholder='Подъезд').input-text
+												+e('').one-fift
+													+b('input')(type='text' placeholder='Этаж').input-text
+											+b('input')(type='text' placeholder='E-mail').input-text
+											+b('input')(type='text' placeholder='Номер дисконтной карты').input-text
+									+b('input')(type='submit' value='Сохранить данные').btn
+							+e('').cell
+								+b('span').title-1 Данные авторизации
+								+b('form').form.authoriz
+									+b('input')(type='text' placeholder='Старый пароль').input-text
+									+b('input')(type='text' placeholder='Новый пароль').input-text
+									+b('input')(type='text' placeholder='Повтор нового пароля').input-text
+									+b('input')(type='submit' value='Изменить пароль').btn
+
+
+
+		include partials/footer
+		include inc/vendor-scripts
+		script(src="js/client.min.js")

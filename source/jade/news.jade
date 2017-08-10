@@ -1,0 +1,44 @@
+include helpers/bemto
+include helpers/variables
+include helpers/mixins
+
+-bemto_settings_prefix = 'b-'
+
+doctype html
+html
+	head
+		title news
+		include inc/head
+	body(class="p-news")
+		include partials/top-header
+
+		.l-common-wrap
+			+mobile-menu
+			.l-content-wrap
+				.l-page
+					include partials/header
+					.l-container
+						+breadcrumb
+						+b('span').title-1.black.pdn-top Новости
+						+b('').article-cols.news
+							+e('').cols-wrap
+								+e('').col
+									+news-item
+								+e('').col
+									+news-item
+								+e('').col
+									+news-item
+								+e('').col
+									+news-item
+								+e('').col
+									+news-item
+						+b('').products-loader
+							span
+							span
+							span
+							span
+						+subscribe
+
+		include partials/footer
+		include inc/vendor-scripts
+		script(src="js/client.min.js")

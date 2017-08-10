@@ -1,0 +1,61 @@
+include helpers/bemto
+include helpers/variables
+include helpers/mixins
+
+-bemto_settings_prefix = 'b-'
+
+doctype html
+html
+	head
+		title contacts
+		include inc/head
+	body(class="p-contacts")
+		include partials/top-header
+
+		.l-common-wrap
+			+mobile-menu
+			.l-content-wrap
+				.l-page
+					include partials/header
+					.l-container
+						+breadcrumb
+						+b('section').contacts
+							+e('').cols-wrap
+								+e('').col
+									+e('').row
+										+b('span').title-1.black.marg-lg Контакты
+										+b('span').title-1 Интернет-магазин SISTERS.BY
+										+e('p').item +375 (29) 161-20-20 (Velcom/Viber/WhatsApp)
+										+b('a').btn Заказать звонок
+										+e('p').item Email: <a href='#' class='b-link underline'>sisters.minsk@gmail.com</a>
+										+b('a').btn Заказать звонок
+										+e('p').item Skype: sisters.by
+										+e('p').item Время работы: ЕЖЕДНЕВНО с 8 до 20
+										+e('p').item Адрес для почтовых отправлений: 220005, г. Минск, ул. В.Хоружей
+								+e('').col
+									+e('').row
+										+b('span').title-1 Отдел рекламы
+										+e('p').item +375 (17) 286-30-95 (добавочный номер - 2)
+										+e('p').item +375 (17) 286-30-95 (добавочный номер - 2)
+										+e('p').item +375 (17) 286-30-95 (добавочный номер - 2)
+										+e('p').item Email: <a href='#' class='b-link underline'>sisters.minsk@gmail.com</a>
+									+e('').row
+										+b('span').title-1 Отдел бухгалтерии
+										+e('p').item +375 (17) 286-30-95 (добавочный номер - 2)
+										+e('p').item +375 (17) 286-30-95 (добавочный номер - 2)
+										+e('p').item +375 (17) 286-30-95 (добавочный номер - 2)
+										+e('p').item Email: <a href='#' class='b-link underline'>sisters.minsk@gmail.com</a>
+								+e('').col
+									+e('').row
+										+b('span').title-1 Владелец магазина
+										+e('p').item ЧТУП "ПримаБотти"
+									+e('').row
+										+b('span').title-1 СВИДЕТЕЛЬСТВО ГОСУДАРСТВЕННОЙ РЕГИСТРАЦИИ
+										+e('p').item No 691170201, выдано 11 ноября 2011 г. Вилейским райисполкомом
+									+e('').row
+										+b('span').title-1 ЗАРЕГИСТРИРОВАНО В ТОРГОВОМ РЕЕСТРЕ РБ
+										+e('p').item No 691170201-7 30 декабря 2014 г.
+						+subscribe
+		include partials/footer
+		include inc/vendor-scripts
+		script(src="js/client.min.js")

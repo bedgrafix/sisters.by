@@ -1,0 +1,63 @@
+include helpers/bemto
+include helpers/variables
+include helpers/mixins
+
+-bemto_settings_prefix = 'b-'
+
+doctype html
+html
+	head
+		title shops
+		include inc/head
+	body(class="p-shops")
+		include partials/top-header
+
+		.l-common-wrap
+			+mobile-menu
+			.l-content-wrap
+				.l-page
+					include partials/header
+					.l-container
+						+breadcrumb
+						+b('section').text-wrap.marg-btm
+							+b('span').title-1.black Наши магазины
+							p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.
+						+b('span').title-1 магазины на карте
+						+b('').map
+						+b('').article-cols
+							+e('').cols-wrap
+								+e('').col
+									+shop-item
+								+e('').col
+									+shop-item
+								+e('').col
+									+shop-item
+								+e('').col
+									+shop-item
+						+b('section').text-wrap.marg-btm
+							p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.
+							p Приятных покупок
+						+b('span').title-1 Способы оплаты
+						p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.
+						+b('section').payment-wrap
+							+b('').payment
+								+e('').wrap
+									+e('img')(src='../img/visa.png').item
+									+e('img')(src='../img/visa_e.png').item
+									+e('img')(src='../img/mscard.png').item
+									+e('img')(src='../img/maestro.png').item
+									+e('img')(src='../img/halva_plus.png').item
+									+e('img')(src='../img/halva.png').item
+									+e('img')(src='../img/payokay.png').item
+									+e('img')(src='../img/mocnaya-carta.png').item
+									+e('img')(src='../img/smart-card.png').item
+									+e('img')(src='../img/auto-card.png').item
+									+e('img')(src='../img/card.png').item
+									+e('img')(src='../img/belcard.png').item
+							+b('a')(href='#').link.arr-r Узнать больше
+
+						+subscribe
+						+widget-social
+		include partials/footer
+		include inc/vendor-scripts
+		script(src="js/client.min.js")

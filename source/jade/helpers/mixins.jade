@@ -1,0 +1,248 @@
+mixin svg-icon(name,mod)
+	- mod = mod || ''
+	svg(class="icon icon-" + name + ' ' + mod)
+		use(xlink:href="img/sprite.svg#" + name)
+
+mixin product-item
+	+b('article').product-item
+		+e('a').add-to-favorite
+			+svg-icon('like','small')
+			+svg-icon('like-active','small')
+		+e('').nav-container
+		+e('a')(href='#').link
+			+b('span').product-labels
+				+svg-icon('new', 'b-product-labels__item active')
+				+svg-icon('sale', 'b-product-labels__item')
+				+svg-icon('premium', 'b-product-labels__item')
+			+e('').img-slider.owl-carousel
+				+e('').item
+					+e('img')(src='../img/product-img.jpg')
+			+e('span').title Комбинезон женский Lit14  9812
+			+e('span').caption Размеры: 42, 44, 46.
+			+e('span').caption Состав:
+			+e('span').caption Производство: Италия
+			+e('span').price <span>9.50 =</span><span class='discount'>11.20=</span>
+
+mixin mobile-menu
+	.l-mob-menu
+		.l-mob-menu-wrap
+			+b('').header-top
+				+e('').wrap
+					+svg-icon('users')
+					+e('span').item.link <a href='#'>Вход</a>&nbsp;/&nbsp;<a href='#'>Регистрация</a>
+				+e('').wrap
+					+svg-icon('track')
+					+e('a').item.link Отслеживание посылки
+			+b('nav').mob-nav
+				+e('').wrap
+					+e('a')(href='#').title-link Женщинам
+					+e('a').btn-toggle
+					+e('').dropdown
+						+e('').inner-wrap
+							+e('a').inner-title Одежда
+							+e('a').inner-btn-toggle
+							+e('').inner-dropdown
+								+e('a')(href='#').link Шапки
+								+e('a')(href='#').link Шарфы
+								+e('a')(href='#').link Шапки
+								+e('a')(href='#').link Подарочные сертификаты
+						+e('').inner-wrap
+							+e('a').inner-title Обувь
+							+e('a').inner-btn-toggle
+							+e('').inner-dropdown
+								+e('a')(href='#').link Шапки
+								+e('a')(href='#').link Шарфы
+								+e('a')(href='#').link Шапки
+								+e('a')(href='#').link Подарочные сертификаты
+				+e('').wrap
+					+e('a')(href='#').title-link.js-act Мужчинам
+					+e('a').btn-toggle
+					+e('').dropdown.js-act
+						+e('').inner-wrap
+							+e('a').inner-title Одежда
+							+e('a').inner-btn-toggle
+							+e('').inner-dropdown
+								+e('a')(href='#').link Шапки
+								+e('a')(href='#').link Шарфы
+								+e('a')(href='#').link Шапки
+								+e('a')(href='#').link Подарочные сертификаты
+						+e('').inner-wrap
+							+e('a').inner-title Обувь
+							+e('a').inner-btn-toggle.js-act
+							+e('').inner-dropdown
+								+e('a')(href='#').link Шапки
+								+e('a')(href='#').link Шарфы
+								+e('a')(href='#').link Шапки
+								+e('a')(href='#').link Подарочные сертификаты
+				+e('').wrap
+					+e('a')(href='#').title-link Премиум
+					+e('a').btn-toggle
+				+e('').wrap
+					+e('a')(href='#').title-link Акции
+				+e('').wrap
+					+e('a')(href='#').title-link Отзывы
+				+e('').wrap
+					+e('a')(href='#').title-link Магазины
+				+e('').wrap
+					+e('a')(href='#').title-link Новости
+				+e('').wrap
+					+e('a')(href='#').title-link Контакты
+
+mixin subscribe
+	+b('section').subscribe
+		+e('').container
+			+e('').text
+				+e('span').title Подписывайтесь на рассылку
+				+e('span').caption и получайте свежие новости магазина на  email или по СМС
+			+e('form').form
+				+e('').wrap
+					+b('input')(type='text' placeholder='email или номер телефона').input-text.transparent
+					+b('input')(type='submit' value='Подписаться').btn.transparent
+				+b('a')(href='#').link.white Отписаться от рассылки
+
+
+mixin breadcrumb
+	+b('').breadcrumb
+		+e('').wrap
+			+e('a')(href='#').item Главная
+		+e('').wrap
+			+e('span').item Женщинам
+
+mixin widget-social
+	+b('').widget-wrap
+		+e('').left
+			+e('img')(src='../img/widget-vk.jpg')
+		+e('').right
+			+e('img')(src='../img/widget-insta.jpg')
+
+mixin shop-item
+	+b('article').shop
+		+e('').img-wrap
+			+e('a')(data-fancybox href='https://sisters.by/files/items/5843/icon.png')
+				+e('img')(src='http://placehold.it/300x230').img
+		+e('').text-wrap
+			+b('span').title-1 Интернет-магазин SISTERS.BY пункт самовывоза
+			+e('p').row Режим работы: с 8.00 до 20.00 ежедневно
+			+e('p').row Адрес: ул. В. Хоружей, 1А, офис 407, 4 этаж
+			+e('p').row <a href='#' class='b-link point'>Показать на карте</a>
+			+e('p').row.subway Адрес: ул. В. Хоружей, 1А, офис 407, 4 этаж
+			+e('p').row Телефон: 8 (044) 744-76-70  (уточняйте наличие и размеры)
+			+e('p').row.bold Первый мужской магазин HIM by Sister's
+			+e('').logos
+				+e('')(data-hint='Женская линия').logo-wrap
+					+e('img')(src='../img/logo-sisters.png').logo-item
+				+e('')(data-hint='Премиум линия').logo-wrap
+					+e('img')(src='../img/logo-sisters-premium.png').logo-item
+				+e('')(data-hint='Мужская линия').logo-wrap
+					+e('img')(src='../img/logo-him.png').logo-item
+
+mixin news-item
+	+b('article').news
+		+e('a')(href='#').link
+			+e('').table
+				+e('').left
+					+e('img')(src='http://placehold.it/200x200')
+				+e('').right
+					+e('').top-box
+						+b('span').title-2.link Фотоотчёт: Торжественное открытие  магазина Sister's в ТРЦ GALLERIA MINSK!
+						+b('span').date 20.12.2016
+					+e('').text-wrap
+						p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+
+mixin reviews-item
+	+b('article').reviews
+		+e('').top-box
+			+e('span').name Анастасия
+			+b('').stars
+				+svg-icon('star-cur', 'act')
+				+svg-icon('star-cur')
+				+svg-icon('star-cur')
+				+svg-icon('star-cur')
+				+svg-icon('star-cur')
+		+e('').item-inf
+			+e('span').city Могилев
+			+b('span').date 24.12.2016
+		+e('').text-wrap
+			p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.
+		+e('a').show-more Читать полностью
+
+mixin mobile-filter
+	.l-mob-filter
+		.l-mob-filter-wrap
+			+b('form').mobile-filter
+				+b('span').title-1.black Фильтры
+				+e('a').close
+				+e('').wrap
+					+b('').checkbox
+						+e('input')(type='checkbox' name='size' id='new')
+						+e('label')(for='new').label
+							+e('span').check
+							+e('span').text Только новинки
+					+b('').checkbox
+						+e('input')(type='checkbox' name='size' id='hits')
+						+e('label')(for='hits').label
+							+e('span').check
+							+e('span').text Только хиты
+				+e('').wrap
+					+e('span').item Цена
+					+e('').row
+						+e('').cell-dbl
+							+b('input')(type='text' placeholder='От').input-text
+						+e('').cell-dbl
+							+b('input')(type='text' placeholder='До').input-text
+				+e('').wrap
+					+e('span').item Размер
+					+b('').checkbox
+						+e('input')(type='checkbox' name='size' id='size_1')
+						+e('label')(for='size_1').label
+							+e('span').check
+							+e('span').text 40
+					+b('').checkbox
+						+e('input')(type='checkbox' name='size' id='size_1')
+						+e('label')(for='size_1').label
+							+e('span').check
+							+e('span').text 42
+					+b('').checkbox
+						+e('input')(type='checkbox' name='size' id='size_1')
+						+e('label')(for='size_1').label
+							+e('span').check
+							+e('span').text 44
+				+e('').wrap
+					+e('span').item Материл
+					+b('').checkbox
+						+e('input')(type='checkbox' name='size' id='size_1')
+						+e('label')(for='size_1').label
+							+e('span').check
+							+e('span').text 40
+					+b('').checkbox
+						+e('input')(type='checkbox' name='size' id='size_1')
+						+e('label')(for='size_1').label
+							+e('span').check
+							+e('span').text 42
+					+b('').checkbox
+						+e('input')(type='checkbox' name='size' id='size_1')
+						+e('label')(for='size_1').label
+							+e('span').check
+							+e('span').text 44
+				+e('').wrap
+					+e('span').item Цвет
+					+b('').checkbox.color
+						+e('input')(type='checkbox' name='size' id='size_1')
+						+e('label')(for='size_1').label
+							+e('span').check
+							+e('span').text Бежевый
+						+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+					+b('').checkbox.color
+						+e('input')(type='checkbox' name='size' id='size_1')
+						+e('label')(for='size_1').label
+							+e('span').check
+							+e('span').text Белый
+						+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+					+b('').checkbox.color
+						+e('input')(type='checkbox' name='size' id='size_1')
+						+e('label')(for='size_1').label
+							+e('span').check
+							+e('span').text Голубой
+						+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+			+b('input')(type='reset' value='Сбросить фильтры').btn.gray-full
+			+b('input')(type='submit' value='Применить фильтры').btn.blue

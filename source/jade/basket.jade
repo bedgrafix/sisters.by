@@ -1,0 +1,211 @@
+include helpers/bemto
+include helpers/variables
+include helpers/mixins
+
+-bemto_settings_prefix = 'b-'
+
+doctype html
+html
+	head
+		title basket
+		include inc/head
+	body(class="p-basket")
+		include partials/top-header
+
+		.l-common-wrap
+			+mobile-menu
+			.l-content-wrap
+				.l-page
+					include partials/header
+					.l-container
+						+breadcrumb
+						+b('span').title-1.black.pdn-top Корзина
+						+b('').basket-table
+							+e('').row-title
+								+e('').cell
+									span<span class='amount'>3</span> товара в корзине
+								+e('').cell
+									span Количество
+								+e('').cell
+									span Цена
+								+e('').cell
+									span Скидка 5%
+								+e('').cell
+									span Цена со скидкой
+							+e('').row
+								+e('').cell
+									+e('img')(src='http://placehold.it/76x76').img
+									+e('').product-desc
+										+e('span').desc-text Платье
+										+e('span').desc-text Артикул: Zit 16 26823
+										+e('span').desc-text Размер: М <a href='#' class='b-link underline'>Изменить <span>размер</span></a>
+										+e('span').desc-text Цвет: серый
+								+e('').cell
+									+b('').select-amount
+										+e('a').minus
+										+e('input')(type='text' placeholder='1').numb
+										+e('a').plus
+								+e('').cell
+									+e('span').price 99.00
+									+e('span').sub-price 49.50 x 2 = 99.00
+								+e('').cell
+									+e('span').discount 3.20
+								+e('').cell
+									+e('span').discount-mob Цена со скидкой 5%<a class='hint'></a>
+									+e('span').discount-price 95.80
+									+e('a').remove
+							+e('').row
+								+e('').cell
+									+e('img')(src='http://placehold.it/76x76').img
+									+e('').product-desc
+										+e('span').desc-text Платье
+										+e('span').desc-text Артикул: Zit 16 26823
+										+e('span').desc-text Размер: М <a href='#' class='b-link underline'>Изменить <span>размер</span></a>
+										+e('span').desc-text Цвет: серый
+								+e('').cell
+									+b('').select-amount
+										+e('a').minus
+										+e('input')(type='text' placeholder='1').numb
+										+e('a').plus
+								+e('').cell
+									+e('span').price 99.00
+									+e('span').sub-price 49.50 x 2 = 99.00
+								+e('').cell
+									+e('span').discount 3.20
+								+e('').cell
+									+e('span').discount-mob Цена со скидкой 5%<a class='hint'></a>
+									+e('span').discount-price 95.80
+									+e('a').remove
+							+e('').row
+								+e('').cell
+									+e('img')(src='http://placehold.it/76x76').img
+									+e('').product-desc
+										+e('span').desc-text Платье
+										+e('span').desc-text Артикул: Zit 16 26823
+										+e('span').desc-text Размер: М <a href='#' class='b-link underline'>Изменить <span>размер</span></a>
+										+e('span').desc-text Цвет: серый
+								+e('').cell
+									+b('').select-amount
+										+e('a').minus
+										+e('input')(type='text' placeholder='1').numb
+										+e('a').plus
+								+e('').cell
+									+e('span').price 99.00
+									+e('span').sub-price 49.50 x 2 = 99.00
+								+e('').cell
+									+e('span').discount 3.20
+								+e('').cell
+									+e('span').discount-mob Цена со скидкой 5%<a class='hint'></a>
+									+e('span').discount-price 95.80
+									+e('a').remove
+						+b('').basket-total
+							+e('').cell
+								+b('span').title-1.black Дисконтная карта
+								p Введите номер дисконтной карты для получения скидки на заказ:
+								+b('form').input-discount
+									+e('').cell
+										+b('input')(type='text' placeholder='Номер дисконтной карты').input-text
+									+e('').cell
+										+b('input')(type='submit' value='Применить карту').btn
+							+e('').cell
+								+b('span').total
+									+e('span').caption итого со скидкой:
+									+e('span').price 1 297.00
+						+b('form').delivery
+							+e('').cell
+								+e('').row
+									+b('span').title-1 Способ доставки
+									+e('').input-wrap
+										+b('span').hint Бесплатно
+											+e('a').icon
+											+e('p').text Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя
+										+b('').checkbox
+											+e('input')(type='radio' name='delivery' id='delivery_1')
+											+e('label')(for='delivery_1').label
+												+e('span').check
+												+e('span').text Самовывоз
+									+e('').input-wrap
+										+b('span').hint Бесплатно
+											+e('a').icon
+											+e('p').text Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя
+										+b('').checkbox
+											+e('input')(type='radio' name='delivery' id='delivery_2')
+											+e('label')(for='delivery_2').label
+												+e('span').check
+												+e('span').text Курьером <span class='hide-mob'>(по Минску в пределах МКАД + Уручье)</span>
+									+e('').input-wrap
+										+b('span').hint Бесплатно
+											+e('a').icon
+											+e('p').text Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя
+										+b('').checkbox
+											+e('input')(type='radio' name='delivery' id='delivery_3')
+											+e('label')(for='delivery_3').label
+												+e('span').check
+												+e('span').text Почтой <span class='hide-mob'>(по всей территории РБ)</span>
+								+e('').row
+									+b('span').title-1 Способ оплаты
+									+b('').checkbox
+										+e('input')(type='radio' name='pay' id='pay_1')
+										+e('label')(for='pay_1').label
+											+e('span').check
+											+e('span').text Почтой <span class='hide-mob'>(по всей территории РБ)</span>
+									+b('').checkbox
+										+e('input')(type='radio' name='pay' id='pay_2')
+										+e('label')(for='pay_2').label
+											+e('span').check
+											+e('span').text Почтой <span class='hide-mob'>(по всей территории РБ)</span>
+									+b('').checkbox
+										+e('input')(type='radio' name='pay' id='pay_3')
+										+e('label')(for='pay_3').label
+											+e('span').check
+											+e('span').text Почтой <span class='hide-mob'>(по всей территории РБ)</span>
+							+e('').cell
+								+b('span').title-1 Информация о получателе
+								+b('').form.order
+									+e('').cell
+										+b('input')(type='text' placeholder='Фамилия, имя, отчество').input-text
+										+b('input')(type='text' placeholder='Контактный телефон').input-text
+										+b('input')(type='text' placeholder='Область').input-text
+										+b('input')(type='text' placeholder='Почтовый индекс').input-text
+										+b('input')(type='text' placeholder='город').input-text
+									+e('').cell
+										+b('input')(type='text' placeholder='Улица').input-text
+										+e('').row
+											+e('').cell-third
+												+b('input')(type='text' placeholder='Дом').input-text
+											+e('').cell-third
+												+b('input')(type='text' placeholder='Корпус').input-text
+											+e('').cell-third
+												+b('input')(type='text' placeholder='Квартира').input-text
+										+b('textarea')(placeholder='Комментарий').textarea
+						+b('').total-order
+							+e('').cell
+								+b('span').total
+									+e('span').caption итого:
+									+e('span').price 1 297.00
+								+b('input')(type='submit' value='Подтвердить заказ').btn.blue
+							+e('').cell
+								+e('').left
+									+b('').checkbox
+										+e('input')(type='checkbox' name='agree' id='agree')
+										+e('label')(for='agree').label
+											+e('span').check
+											+e('span').text C <a href='#' class='b-link underline'>условиями заказа</a> ознакомлен
+								+e('').right
+									+b('input')(type='submit' value='Подтвердить заказ').btn.blue
+
+		.im-popups
+			.im-popup#added
+				.im-popup-inside
+					+b('form').popup.added
+						+e('a').close
+						+b('span').title-1.black Добавлено
+						p Товар <span>Куртка Mz 15 19307<span> успешно добален в корзину.
+						+b('a').btn Вернуться к покупкам
+						+b('a').btn В Корзину
+
+
+
+		include partials/footer
+		include inc/vendor-scripts
+		script(src="js/client.min.js")

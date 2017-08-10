@@ -1,0 +1,159 @@
+include helpers/bemto
+include helpers/variables
+include helpers/mixins
+
+-bemto_settings_prefix = 'b-'
+
+doctype html
+html
+	head
+		title personal-area
+		include inc/head
+	body(class="p-personal-area")
+		include partials/top-header
+
+		.l-common-wrap
+			+mobile-menu
+			.l-content-wrap
+				.l-page
+					include partials/header
+					.l-container
+						+breadcrumb
+						+b('span').title-1.black.pdn-top Личный кабинет
+						+b('nav').mob-nav.tabs
+							+e('').wrap
+								+e('a')(href='#').title-link История заказов
+								+e('a').btn-toggle
+								+e('').dropdown
+									+e('').inner-wrap
+										+e('a').inner-title Личные данные
+									+e('').inner-wrap.current
+										+e('a').inner-title История заказов
+									+e('').inner-wrap
+										+e('a').inner-title Избранное
+						+b('').product-hide-wrap
+							+e('').row
+								+e('').cell
+									span 16.11.2016
+									span 3 товара
+								+e('').cell
+									span Доставлен
+							+e('').content
+								+b('').basket-table.history
+									+e('').row-inf
+										+e('').cell
+											+e('').inner-wrap
+												+e('span').sub-title Номер заказа:
+												+e('span').desc-text 432342624526524
+											+e('').inner-wrap
+												+e('span').sub-title Способ оплаты:
+												+e('span').desc-text Наличными курьеру
+											+e('').inner-wrap
+												+e('span').sub-title Способ доставки:
+												+e('span').desc-text Курьером
+										+e('').cell
+											+e('span').sub-title Код отслеживания:
+											+e('span').desc-text Нет
+										+e('').cell
+											+e('span').sub-title Статус заказа:
+											+e('span').desc-text Доставлен
+									+e('').row
+										+e('').cell
+											+e('img')(src='http://placehold.it/76x76').img
+											+e('').product-desc
+												+e('span').desc-text Платье
+												+e('span').desc-text Артикул: Zit 16 26823
+												+e('span').desc-text Размер: М
+												+e('span').desc-text Цвет: серый
+										+e('').cell
+											+e('span').desc-text Количество
+											+e('span').price 1
+										+e('').cell
+											+e('span').desc-text Стоимость:
+											+e('span').price 95.80
+									+e('').row
+										+e('').cell
+											+e('img')(src='http://placehold.it/76x76').img
+											+e('').product-desc
+												+e('span').desc-text Платье
+												+e('span').desc-text Артикул: Zit 16 26823
+												+e('span').desc-text Размер: М
+												+e('span').desc-text Цвет: серый
+										+e('').cell
+											+e('span').desc-text Количество
+											+e('span').price 1
+										+e('').cell
+											+e('span').desc-text Стоимость:
+											+e('span').price 95.80
+								+b('').total-price
+									+e('').cell
+										+e('span').ception Итоговая стоимость заказа:
+										+e('span').price 1 297.00
+
+						+b('').product-hide-wrap
+							+e('').row
+								+e('').cell
+									span 16.11.2016
+									span 3 товара
+								+e('').cell
+									span Доставлен
+							+e('').content
+								+b('').basket-table.history
+									+e('').row-inf
+										+e('').cell
+											+e('').inner-wrap
+												+e('span').sub-title Номер заказа:
+												+e('span').desc-text 432342624526524
+											+e('').inner-wrap
+												+e('span').sub-title Способ оплаты:
+												+e('span').desc-text Наличными курьеру
+											+e('').inner-wrap
+												+e('span').sub-title Способ доставки:
+												+e('span').desc-text Курьером
+										+e('').cell
+											+e('span').sub-title Код отслеживания:
+											+e('span').desc-text Нет
+										+e('').cell
+											+e('span').sub-title Статус заказа:
+											+e('span').desc-text Доставлен
+									+e('').row
+										+e('').cell
+											+e('img')(src='http://placehold.it/76x76').img
+											+e('').product-desc
+												+e('span').desc-text Платье
+												+e('span').desc-text Артикул: Zit 16 26823
+												+e('span').desc-text Размер: М
+												+e('span').desc-text Цвет: серый
+										+e('').cell
+											+e('span').desc-text Количество
+											+e('span').price 1
+										+e('').cell
+											+e('span').desc-text Стоимость:
+											+e('span').price 95.80
+									+e('').row
+										+e('').cell
+											+e('img')(src='http://placehold.it/76x76').img
+											+e('').product-desc
+												+e('span').desc-text Платье
+												+e('span').desc-text Артикул: Zit 16 26823
+												+e('span').desc-text Размер: М
+												+e('span').desc-text Цвет: серый
+										+e('').cell
+											+e('span').desc-text Количество
+											+e('span').price 1
+										+e('').cell
+											+e('span').desc-text Стоимость:
+											+e('span').price 95.80
+								+b('').total-price
+									+e('').cell
+										+e('span').ception Итоговая стоимость заказа:
+										+e('span').price 1 297.00
+						+b('').products-loader
+							span
+							span
+							span
+							span
+
+		include partials/footer
+		include inc/vendor-scripts
+		script(src="js/client.min.js")

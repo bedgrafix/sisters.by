@@ -1,0 +1,208 @@
+include helpers/bemto
+include helpers/variables
+include helpers/mixins
+
+-bemto_settings_prefix = 'b-'
+
+doctype html
+html
+	head
+		title main
+		include inc/head
+	body(class="p-main")
+		include partials/top-header
+
+		.l-common-wrap
+			+mobile-menu
+			.l-content-wrap
+				.l-page
+					include partials/header
+					+b('').main-slider.owl-carousel
+						+e('').item
+							+e('img')(src='img/main-slider.jpg').desktop
+							+e('img')(src='img/main-slider.jpg').mob
+							+b('a').btn.tr-t-black Смотреть товары
+						+e('').item
+							+e('img')(src='img/main-slider.jpg').desktop
+							+e('img')(src='img/main-slider.jpg').mob
+							+b('a').btn.tr-t-black Смотреть товары
+						+e('').item
+							+e('img')(src='img/main-slider.jpg').desktop
+							+e('img')(src='img/main-slider.jpg').mob
+							+b('a').btn.tr-t-black Смотреть товары
+					.l-container
+						+b('nav').mob-nav.content
+							+e('').wrap
+								+e('a')(href='#').title-link Женщинам
+								+e('a').btn-toggle
+								+e('').dropdown
+									+e('').inner-wrap
+										+e('a').inner-title Одежда
+										+e('a').inner-btn-toggle
+										+e('').inner-dropdown
+											+e('a')(href='#').link Шапки
+											+e('a')(href='#').link Шарфы
+											+e('a')(href='#').link Шапки
+											+e('a')(href='#').link Подарочные сертификаты
+									+e('').inner-wrap
+										+e('a').inner-title Обувь
+										+e('a').inner-btn-toggle
+										+e('').inner-dropdown
+											+e('a')(href='#').link Шапки
+											+e('a')(href='#').link Шарфы
+											+e('a')(href='#').link Шапки
+											+e('a')(href='#').link Подарочные сертификаты
+						+b('').promo-wrap.main
+							+e('').cols-wrap
+								+e('').col
+									+b('a')(href='#' style='background-image: url(../img/sis-banner-1.jpg)').promo-item
+										+e('').text-wrap
+											+e('span').title freinds & family
+											+e('span').caption Получите постоянную скидку до 20% на все товары!
+								+e('').col
+									+b('a')(href='#' style='background-image: url(../img/sis-banner-2.jpg)').promo-item
+										+e('').text-wrap
+											+e('span').title freinds & family
+											+e('span').caption Получите постоянную скидку до 20% на все товары!
+											+e('span').price от <span>70.00</span> =
+								+e('').col.dbl
+									+b('a')(href='#' style='background-image: url(../img/sis-banner-3.jpg)').promo-item.wide
+										+e('').text-wrap.black
+											+b('span').promo-discount 20%
+											+e('span').title скидка на зимние пальто до конца декабря
+											+e('span').caption Успей создать весеннее настроение с новой коллекцией эффектных платьев вместе с Sister's!
+							+e('').cols-wrap
+								+e('').col.dbl
+									+b('a')(href='#' style='background-image: url(../img/promo-wide.jpg)').promo-item.wide
+										+e('').text-wrap.black
+											+b('span').promo-discount 20%
+											+e('span').title скидка на зимние пальто до конца декабря
+											+e('span').caption Успей создать весеннее настроение с новой коллекцией эффектных платьев вместе с Sister's!
+								+e('').col
+									+b('a')(href='#' style='background-image: url(../img/promo-bg.jpg)').promo-item
+										+e('').text-wrap
+											+e('span').title freinds & family
+											+e('span').caption Получите постоянную скидку до 20% на все товары!
+								+e('').col
+									+b('a')(href='#' style='background-image: url(../img/promo-bg-2.jpg)').promo-item
+										+e('').text-wrap
+											+e('span').title freinds & family
+											+e('span').caption Получите постоянную скидку до 20% на все товары!
+											+e('span').price от <span>70.00</span> =
+						+b('').tabs
+							+e('').title-wrap
+								+e('a').title-link.js-act Новинки
+								+e('a').title-link На скидке
+							+e('').content-wrap
+								+e('').content.js-act
+									+b('').slider-wrap
+										+b('').goods-slider.owl-carousel
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+									+b('a').btn.mobile-hide Смотреть все новинки
+								+e('').content
+									+b('').slider-wrap
+										+b('').goods-slider.owl-carousel
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+											+e('').item
+												+product-item
+									+b('a').btn.mobile-hide Смотреть все новинки
+						+b('span').title-1.desk-mid Отзывы клиентов
+						+b('').reviews-slider.owl-carousel
+							+e('').item
+								+reviews-item
+							+e('').item
+								+reviews-item
+							+e('').item
+								+reviews-item
+							+e('').item
+								+reviews-item
+							+e('').item
+								+reviews-item
+						+b('a').btn.mobile-hide.align-c Смотреть все отзывы
+						+b('section').section.clf.shop
+							img(src='../img/content-img.jpg')._img-left.dsp-none-mobile
+							+b('').hidden-text
+								+e('').wrap
+									+b('span').title-1.marg-xs Интернет-магазин женской одежды SISTERS.BY
+									p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+									+b('span').title-2.marg-xs Большой ассортимент мужской одежды
+									p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+									+b('spant').title-3.marg-xs Наши преимущества
+									ol
+										li Lorem Ipsum - это текст-"рыба", часто используемый
+										li Lorem Ipsum - это текст-"рыба", часто используемый
+										li Lorem Ipsum - это текст-"рыба", часто используемый
+									+b('a').btn Магазины
+								+e('a').show.arr-bottom Показать полностью
+						+subscribe
+						+widget-social
+
+
+		.im-popups
+			.im-popup#enter
+				.im-popup-inside
+					+b('form').popup
+						+e('a').close
+						+b('span').title-1 Вход
+						+e('').row
+							+e('').input-cell.w-error
+								+b('input')(type='text').input
+								+e('span').error Ошибка!
+							+e('').input-cell
+								+b('input')(type='text').input
+								+e('span').error Ошибка!
+						+b('').error-wrap.w-error
+							+b('input')(type='text').input
+							+e('span').error Ошибка!
+						+b('input')(type='submit' value='Войти').btn
+						+e('a').link Забыли пароль
+		.im-popups.no-padding
+			.im-popup#sizes
+				.im-popup-inside.all-window
+					+b('').popup
+						+e('a').close
+						+e('').scroll-wrap
+							+b('').div
+
+
+		include partials/footer
+		include inc/vendor-scripts
+		script(src="js/client.min.js")

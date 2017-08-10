@@ -1,0 +1,167 @@
+header.l-header.bottom
+	.l-container
+		+b('').header-middle
+			+e('').left
+				+b('a').mobile-btn.mob-menu
+					+svg-icon('menu')
+				+b('span').logo.mobile
+					+e('img')(src='../img/mobile-logo.png')
+				+b('nav').header-menu
+					+e('').wrap
+						+e('a').item Женщинам
+						+b('').dropdown-menu
+							.l-container
+								+e('').category
+									+e('a')(href='#').title Одежда
+									+e('').wrap-list
+										+e('ul').cell
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+										+e('ul').cell
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+								+e('').category
+									+e('a')(href='#').title Одежда
+									+e('').wrap-list
+										+e('ul').cell
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+										+e('ul').cell
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+								+e('').category
+									+e('a')(href='#').title Одежда
+									+e('').wrap-list
+										+e('ul').cell
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+											+e('li')
+												+e('a')(href='#').item Платья, туники
+										+e('ul').cell
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+											+e('li')
+												+e('a')(href='#').item Плащи
+					+e('').wrap
+						+e('a').item Мужчинам
+					+e('').wrap
+						+e('a').item Премиум
+					+e('').wrap
+						+e('a').item Акции
+			+e('').center
+				+b('span').logo
+					+e('img')(src='../img/logo.png')
+			+e('').right
+				+b('nav').header-menu
+					+e('').wrap
+						+e('a').item Отзывы
+					+e('').wrap
+						+e('a').item Магазины
+					+e('').wrap
+						+e('a').item Новости
+					+e('').wrap
+						+e('a').item Контакты
+				+b('a').mobile-btn.search.js-search
+					+svg-icon('search-mob')
+				+b('a').mobile-btn
+					+svg-icon('basket')
+					+e('').item Корзина:&nbsp;<span>2</span>
+				+b('a').mobile-btn
+					+svg-icon('like')
+					+e('').item Избранное:&nbsp;<span>0</span>
+	.l-container.bg-lt-gray.search
+		+b('').header-bottom
+			+e('').left
+				+b('').search-wrap
+					+b('input').header-search
+					+e('span').placeholder Введите фразу для поиска, например, <span>платье</span>
+					+e('input')(type='submit').submit
+					+e('a').close
+			+e('').right
+				+b('a').mobile-btn
+					+svg-icon('basket')
+					+e('').item Корзина:&nbsp;<span>2</span>
+				+b('a').mobile-btn
+					+svg-icon('like')
+					+e('').item Избранное:&nbsp;<span>0</span>
+

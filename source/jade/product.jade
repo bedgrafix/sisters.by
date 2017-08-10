@@ -1,0 +1,218 @@
+include helpers/bemto
+include helpers/variables
+include helpers/mixins
+
+-bemto_settings_prefix = 'b-'
+
+doctype html
+html
+	head
+		title product
+		include inc/head
+	body(class="p-product")
+		include partials/top-header
+
+		.l-common-wrap
+			+mobile-menu
+			.l-content-wrap
+				.l-page
+					include partials/header
+					.l-container
+						+b('').breadcrumb
+							+e('').wrap
+								+e('a')(href='#').item Главная
+							+e('').wrap
+								+e('span').item Женщинам
+						+b('article').good
+							+e('').left
+								+b('').good-slider.owl-carousel.vis-mobile
+									+e('img')(src='../img/good-img.jpg')
+									+e('img')(src='../img/good-img.jpg')
+									+e('img')(src='../img/good-img.jpg')
+								+b('').goods-slider-table
+									+e('').left
+										+b('').vertical-slider.slick-slider
+											+e('a').item
+												+e('img')(src='http://placehold.it/120x120?text=1').thumb
+											+e('a').item
+												+e('img')(src='http://placehold.it/120x120?text=2').thumb
+											+e('a').item.js-act
+												+e('img')(src='http://placehold.it/120x120?text=3').thumb
+											+e('a').item
+												+e('img')(src='http://placehold.it/120x120?text=4').thumb
+											+e('a').item
+												+e('img')(src='http://placehold.it/120x120?text=5').thumb
+											+e('a').item
+												+e('img')(src='http://placehold.it/120x120?text=6').thumb
+											+e('a').item.video
+												+e('img')(src='http://placehold.it/120x120?text=7').thumb
+									+e('').right
+										+b('').gallery-wrap
+											+e('img')(src='../img/good-img.jpg').item.js-act
+											+e('img')(src='../img/good-img.jpg').item
+											+e('img')(src='../img/good-img.jpg').item
+											+e('img')(src='../img/good-img.jpg').item
+											+e('img')(src='../img/good-img.jpg').item
+											+e('img')(src='../img/good-img.jpg').item
+											+e('img')(src='http://placehold.it/120x120?text=7').item
+								+b('form').good-information__row.desktop
+									+b('span').title-3 Наличие товара
+									+b('').product-avail.js-hidden-list
+										+b('a').link.arr-bottom.js-show-list Показать полностю
+										+e('').item
+											+e('span').title ТРЦ ГАЛИЛЕО 3 этаж <span>(возле ж/д вокзала)</span>
+											+e('span').text ул. Бобруйская, 6 (ст.м. Пл. Ленина), тел.: +375 (44) 744-76-70
+											+e('span').amount 2
+										+e('').item
+											+e('span').title ТРЦ ГАЛИЛЕО 3 этаж <span>(возле ж/д вокзала)</span>
+											+e('span').text ул. Бобруйская, 6 (ст.м. Пл. Ленина), тел.: +375 (44) 744-76-70
+											+e('span').amount 2
+										+e('').item
+											+e('span').title ТРЦ ГАЛИЛЕО 3 этаж <span>(возле ж/д вокзала)</span>
+											+e('span').text ул. Бобруйская, 6 (ст.м. Пл. Ленина), тел.: +375 (44) 744-76-70
+											+e('span').amount 2
+										+e('').item
+											+e('span').title ТРЦ ГАЛИЛЕО 3 этаж <span>(возле ж/д вокзала)</span>
+											+e('span').text ул. Бобруйская, 6 (ст.м. Пл. Ленина), тел.: +375 (44) 744-76-70
+											+e('span').amount 2
+										+e('').item
+											+e('span').title ТРЦ ГАЛИЛЕО 3 этаж <span>(возле ж/д вокзала)</span>
+											+e('span').text ул. Бобруйская, 6 (ст.м. Пл. Ленина), тел.: +375 (44) 744-76-70
+											+e('span').amount 2
+							+e('').right
+								+b('form').good-information
+									+e('').row
+										+b('span').title-1.black Куртка Mz 15 19307
+										+b('').price 
+											span 249.50=
+											span.discount 249.50=
+											+e('span').caption белорусских рублей
+									+e('').row
+										+b('span').title-3 Доступные цвета
+										+b('').check-wrap
+											+e('').container
+												+b('').custom-check.current
+													+e('input')(type='radio' name='color' id='color_1')
+													+e('label')(for='color_1').label
+														+e('img')(src='http://placehold.it/70x70').img
+														+e('span').caption розовый
+												+b('').custom-check
+													+e('input')(type='radio' name='color' id='color_2')
+													+e('label')(for='color_2').label
+														+e('img')(src='http://placehold.it/70x70').img
+														+e('span').caption синий
+												+b('').custom-check
+													+e('input')(type='radio' name='color' id='color_3')
+													+e('label')(for='color_3').label
+														+e('img')(src='http://placehold.it/70x70').img
+														+e('span').caption белый
+												+b('').custom-check
+													+e('input')(type='radio' name='color' id='color_4')
+													+e('label')(for='color_4').label
+														+e('img')(src='http://placehold.it/70x70').img
+														+e('span').caption красный
+									+e('').row
+										+b('').table-wrap-size
+											+e('').left
+												+b('').select-wrap
+													+e('span').caption Размер
+													+b('select').input-select
+														option XXL(42)
+														option XXL(42)
+														option XXL(42)
+											+e('').right
+												+b('a')(href='#').link.underline Таблица размеров
+										+b('a').btn.blue.basket Добавить в корзину
+										+b('a').btn.favorites Добавить в избранное
+									+e('').row
+										+b('span').title-3 О товаре
+										+b('p').good-description
+											+e('').left
+												+e('span').text-row Полное наименование: <span>Куртка женская  Mz 15 19307</span>
+												+e('span').text-row Полное наименование: <span>Куртка женская  Mz 15 19307</span>
+												+e('span').text-row Полное наименование: <span>Куртка женская  Mz 15 19307</span><span class='link-wrap'><a href='#' class='b-link underline'>Таблица размеров</a></span>
+												+e('span').text-row Полное наименование: <span>Куртка женская  Mz 15 19307</span>
+												+e('span').text-row Полное наименование: <span>Куртка женская  Mz 15 19307</span>
+												+e('span').text-row Полное наименование: <span>Куртка женская  Mz 15 19307</span>
+											+e('').right
+												+e('span').text-row.gray Изготовитель: <span>sp. z o. o. "Poldi Duo" г. Варшава,  ул. Ильжецко, 26, Республика Польша</span>
+												+e('span').text-row.gray Импортер: <span>Индивидуальный предприниматель  Карчик Дмитрий Леонидович</span>
+												+e('span').text-row.gray Страна производства: <span>Китай</span>
+												+b('span').certification Товар серцифицирован
+									+e('').row
+										+b('span').title-3 Параметры модели
+										+b('p').good-description
+											+e('span').text-row Рост модели: <span>168 см</span>
+											+e('span').text-row Рост модели: <span>168 см</span>
+											+e('span').text-row Рост модели: <span>168 см</span>
+									+e('').row
+										+b('p').promo-text
+											+e('span').text-row <span>-5%</span> при заказе на сайте, <span>-10%</span> держателям дисконтных карт
+											+e('span').text-row <a href='#' class='b-link red'>+ подарок</a>
+											+e('span').text-row <a href='#' class='b-link red'>+ бесплатная доставка</a> по беларуси при заказе от 50 руб.
+									+e('').row.mobile
+										+b('span').title-3 Наличие товара
+										+b('').product-avail.js-hidden-list
+											+b('a').link.arr-bottom.js-show-list Показать полностю
+											+e('').item
+												+e('span').title ТРЦ ГАЛИЛЕО 3 этаж <span>(возле ж/д вокзала)</span>
+												+e('span').text ул. Бобруйская, 6 (ст.м. Пл. Ленина), тел.: +375 (44) 744-76-70
+												+e('span').amount 2
+											+e('').item
+												+e('span').title ТРЦ ГАЛИЛЕО 3 этаж <span>(возле ж/д вокзала)</span>
+												+e('span').text ул. Бобруйская, 6 (ст.м. Пл. Ленина), тел.: +375 (44) 744-76-70
+												+e('span').amount 2
+											+e('').item
+												+e('span').title ТРЦ ГАЛИЛЕО 3 этаж <span>(возле ж/д вокзала)</span>
+												+e('span').text ул. Бобруйская, 6 (ст.м. Пл. Ленина), тел.: +375 (44) 744-76-70
+												+e('span').amount 2
+											+e('').item
+												+e('span').title ТРЦ ГАЛИЛЕО 3 этаж <span>(возле ж/д вокзала)</span>
+												+e('span').text ул. Бобруйская, 6 (ст.м. Пл. Ленина), тел.: +375 (44) 744-76-70
+												+e('span').amount 2
+											+e('').item
+												+e('span').title ТРЦ ГАЛИЛЕО 3 этаж <span>(возле ж/д вокзала)</span>
+												+e('span').text ул. Бобруйская, 6 (ст.м. Пл. Ленина), тел.: +375 (44) 744-76-70
+												+e('span').amount 2
+						+b('').table-btn-wrap
+							+e('').left
+								+b('a').btn.gray.prev Предыдущая модель
+							+e('').right
+								+b('a').btn.gray.next Следующая модель
+						+b('span').title-1 Похожие товары
+						+b('').slider-wrap
+							+b('').goods-wrap-slider.owl-carousel
+								+e('').item
+									+product-item
+								+e('').item
+									+product-item
+								+e('').item
+									+product-item
+								+e('').item
+									+product-item
+								+e('').item
+									+product-item
+								+e('').item
+									+product-item
+						+b('span').title-1 Недавно просмотренные
+						+b('').slider-wrap
+							+b('').goods-wrap-slider.owl-carousel
+								+e('').item
+									+product-item
+								+e('').item
+									+product-item
+								+e('').item
+									+product-item
+								+e('').item
+									+product-item
+								+e('').item
+									+product-item
+								+e('').item
+									+product-item
+
+
+						+subscribe
+
+		include partials/footer
+		include inc/vendor-scripts
+		script(src="js/client.min.js")

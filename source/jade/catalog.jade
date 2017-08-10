@@ -1,0 +1,403 @@
+include helpers/bemto
+include helpers/variables
+include helpers/mixins
+
+-bemto_settings_prefix = 'b-'
+
+doctype html
+html
+	head
+		title catalog
+		include inc/head
+	body(class="p-catalog")
+		include partials/top-header
+
+		.l-common-wrap
+			+mobile-menu
+			+mobile-filter
+
+			.l-content-wrap
+				.l-page
+					include partials/header
+					.l-container
+						+breadcrumb
+						+b('').promo-wrap
+							+e('').cols-wrap
+								+e('').col
+									+b('a')(href='#' style='background-image: url(../img/promo-bg.jpg)').promo-item
+										+e('').text-wrap
+											+e('span').title freinds & family
+											+e('span').caption Получите постоянную скидку до 20% на все товары!
+								+e('').col
+									+b('a')(href='#' style='background-image: url(../img/promo-bg-2.jpg)').promo-item
+										+e('').text-wrap
+											+e('span').title freinds & family
+											+e('span').caption Получите постоянную скидку до 20% на все товары!
+											+e('span').price от <span>70.00</span> =
+								+e('').col.dbl
+									+b('a')(href='#' style='background-image: url(../img/promo-wide.jpg)').promo-item.wide
+										+e('').text-wrap.black
+											+b('span').promo-discount 20%
+											+e('span').title скидка на зимние пальто до конца декабря
+											+e('span').caption Успей создать весеннее настроение с новой коллекцией эффектных платьев вместе с Sister's!
+						+b('nav').mob-nav.content
+							+e('').wrap
+								+e('a')(href='#').title-link.current Женщинам
+								+e('a').btn-toggle
+								+e('').dropdown
+									+e('').inner-wrap
+										+e('a').inner-title Одежда
+										+e('a').inner-btn-toggle
+										+e('').inner-dropdown
+											+e('a')(href='#').link Шапки
+											+e('a')(href='#').link Шарфы
+											+e('a')(href='#').link Шапки
+											+e('a')(href='#').link Подарочные сертификаты
+									+e('').inner-wrap
+										+e('a').inner-title Обувь
+										+e('a').inner-btn-toggle
+										+e('').inner-dropdown
+											+e('a')(href='#').link Шапки
+											+e('a')(href='#').link Шарфы
+											+e('a')(href='#').link Шапки
+											+e('a')(href='#').link Подарочные сертификаты
+						+b('').desktop-box
+							+e('').left
+								+b('span').title-1.black Женщинам
+							+e('').right
+								+b('span').counter 1322 товара
+						+b('').filters-container.mob
+							+e('').wrap
+								+b('a').btn-sort Сортировать по:
+								+b('a').btn-filters Фильтры <span>5</span>
+						+b('').sorting
+							+e('span').main-title Сортировать по:
+							+b('').dropdown-sorting
+								+e('a')(href='#').item.act Новые поступления
+								+e('a')(href='#').item Цена по убыванию
+								+e('a')(href='#').item Цена по возрастанию
+						+b('').desktop-filters
+							+e('span').caption Фильтры:
+							+e('').wrap
+								+e('a').title.select-filter Цена
+								+e('a').clear-filter
+								+e('').dropdown
+									+e('').row
+										+e('').cell-dbl
+											+b('input')(type='text' placeholder='От').input-text.js-range-min
+										+e('').cell-dbl
+											+b('input')(type='text' placeholder='До').input-text.js-range-max
+										+b('')(data-min='0' data-max='1500' data-step='10' data-min-value='200' data-max-value='1000').range
+									+b('a').btn Применить
+							+e('').wrap
+								+e('a').title Размер
+								+e('a').clear-filter
+								+e('').dropdown
+									+b('').checkbox
+										+e('input')(type='checkbox' name='size' id='size_4')
+										+e('label')(for='size_4').label
+											+e('span').check
+											+e('span').text 40
+									+b('').checkbox
+										+e('input')(type='checkbox' name='size' id='size_2')
+										+e('label')(for='size_2').label
+											+e('span').check
+											+e('span').text 42
+									+b('').checkbox
+										+e('input')(type='checkbox' name='size' id='size_3')
+										+e('label')(for='size_3').label
+											+e('span').check
+											+e('span').text 44
+									+b('a').btn Применить
+							+e('').wrap
+								+e('a').title Материал
+								+e('a').clear-filter
+								+e('').dropdown
+									+e('').scroll-wrap
+										+b('').checkbox
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text 40
+										+b('').checkbox
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text 42
+										+b('').checkbox
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text 44
+									+b('a').btn Применить
+							+e('').wrap
+								+e('a').title Цвет
+								+e('a').clear-filter
+								+e('').dropdown
+									+e('').scroll-wrap
+										+b('').checkbox.color
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text Голубой
+											+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+										+b('').checkbox.color
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text Голубой
+											+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+										+b('').checkbox.color
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text Голубой
+											+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+										+b('').checkbox.color
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text Голубой
+											+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+										+b('').checkbox.color
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text Голубой
+											+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+										+b('').checkbox.color
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text Голубой
+											+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+										+b('').checkbox.color
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text Голубой
+											+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+										+b('').checkbox.color
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text Голубой
+											+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+										+b('').checkbox.color
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text Голубой
+											+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+										+b('').checkbox.color
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text Голубой
+											+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+										+b('').checkbox.color
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text Голубой
+											+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+										+b('').checkbox.color
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text Голубой
+											+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+										+b('').checkbox.color
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text Голубой
+											+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+										+b('').checkbox.color
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text Голубой
+											+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+										+b('').checkbox.color
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text Голубой
+											+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+										+b('').checkbox.color
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text Голубой
+											+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+										+b('').checkbox.color
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text Голубой
+											+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+										+b('').checkbox.color
+											+e('input')(type='checkbox' name='size' id='size_1')
+											+e('label')(for='size_1').label
+												+e('span').check
+												+e('span').text Голубой
+											+e('span')(style='background-image: url(../img/multicolor.jpg)').color
+									+b('a').btn Применить
+							+e('').wrap
+								+b('').checkbox
+									+e('input')(type='checkbox' name='size' id='new')
+									+e('label')(for='new').label
+										+e('span').check
+										+e('span').text Только новинки
+							+e('').wrap
+								+b('').checkbox
+									+e('input')(type='checkbox' name='size' id='hits')
+									+e('label')(for='hits').label
+										+e('span').check
+										+e('span').text Только хиты
+							+e('a').clear Очистить фильтры
+						+b('').product-container
+							+b('').products-cols
+								+e('').cols-wrap
+									+e('').col
+										+b('article').product-item
+											+e('a')(data-id='#added').add-to-favorite.im-popup-link
+												+svg-icon('like','small')
+											+e('')(id='1').nav-container
+											+e('a')(href='#').link
+												+b('span').product-labels
+													+e('img')(src='../img/icon-new.jpg').item.active
+													+e('img')(src='../img/icon-sale.jpg').item
+												+e('').img-slider.owl-carousel
+													+e('').item
+														+e('img')(src='../img/product-img.jpg')
+													+e('').item
+														+e('img')(src='../img/product-img.jpg')
+													+e('').item
+														+e('img')(src='../img/product-img.jpg')
+												+e('span').title Комбинезон женский Lit14  9812
+												+e('span').caption-wrap
+													+e('span').caption Размеры: 42, 44, 46.
+													+e('span').caption Состав:
+													+e('span').caption Производство: Италия
+												+e('span').price <span>9.50 =</span><span class='discount'>11.20=</span>
+									+e('').col
+										+b('article').product-item
+											+e('a').add-to-favorite
+												+svg-icon('like','small')
+											+e('')(id='2').nav-container
+											+e('a')(href='#').link
+												+b('span').product-labels
+													+svg-icon('new', 'b-product-labels__item active')
+													+svg-icon('sale', 'b-product-labels__item')
+													+svg-icon('premium', 'b-product-labels__item')
+												+e('').img-slider.owl-carousel
+													+e('').item
+														+e('img')(src='../img/product-img.jpg')
+													+e('').item
+														+e('img')(src='../img/product-img.jpg')
+													+e('').item
+														+e('img')(src='../img/product-img.jpg')
+												+e('span').title Комбинезон женский Lit14  9812
+												+e('span').caption-wrap
+													+e('span').caption Размеры: 42, 44, 46.
+													+e('span').caption Состав:
+													+e('span').caption Производство: Италия
+												+e('span').price <span>9.50 =</span><span class='discount'>11.20=</span>
+									+e('').col
+										+b('article').product-item
+											+e('a').add-to-favorite
+												+svg-icon('like','small')
+											+e('')(id='3').nav-container
+											+e('a')(href='#').link
+												+b('span').product-labels
+													+svg-icon('new', 'b-product-labels__item active')
+													+svg-icon('sale', 'b-product-labels__item')
+													+svg-icon('premium', 'b-product-labels__item')
+												+e('').img-slider.owl-carousel
+													+e('').item
+														+e('img')(src='../img/product-img.jpg')
+													+e('').item
+														+e('img')(src='../img/product-img.jpg')
+													+e('').item
+														+e('img')(src='../img/product-img.jpg')
+												+e('span').title Комбинезон женский Lit14  9812
+												+e('span').caption-wrap
+													+e('span').caption Размеры: 42, 44, 46.
+													+e('span').caption Состав:
+													+e('span').caption Производство: Италия
+												+e('span').price <span>9.50 =</span><span class='discount'>11.20=</span>
+									+e('').col
+										+b('article').product-item
+											+e('a').add-to-favorite
+												+svg-icon('like','small')
+											+e('')(id='4').nav-container
+											+e('a')(href='#').link
+												+b('span').product-labels
+													+svg-icon('new', 'b-product-labels__item active')
+													+svg-icon('sale', 'b-product-labels__item')
+													+svg-icon('premium', 'b-product-labels__item')
+												+e('').img-slider.owl-carousel
+													+e('').item
+														+e('img')(src='../img/product-img.jpg')
+													+e('').item
+														+e('img')(src='../img/product-img.jpg')
+													+e('').item
+														+e('img')(src='../img/product-img.jpg')
+												+e('span').title Комбинезон женский Lit14  9812
+												+e('span').caption-wrap
+													+e('span').caption Размеры: 42, 44, 46.
+													+e('span').caption Состав:
+													+e('span').caption Производство: Италия
+												+e('span').price <span>9.50 =</span><span class='discount'>11.20=</span>
+									+e('').col
+										+b('article').product-item
+											+e('a').add-to-favorite
+												+svg-icon('like','small')
+											+e('')(id='5').nav-container
+											+e('a')(href='#').link
+												+b('span').product-labels
+													+svg-icon('new', 'b-product-labels__item active')
+													+svg-icon('sale', 'b-product-labels__item')
+													+svg-icon('premium', 'b-product-labels__item')
+												+e('').img-slider.owl-carousel
+													+e('').item
+														+e('img')(src='../img/product-img.jpg')
+													+e('').item
+														+e('img')(src='../img/product-img.jpg')
+													+e('').item
+														+e('img')(src='../img/product-img.jpg')
+												+e('span').title Комбинезон женский Lit14  9812
+												+e('span').caption-wrap
+													+e('span').caption Размеры: 42, 44, 46.
+													+e('span').caption Состав:
+													+e('span').caption Производство: Италия
+												+e('span').price <span>9.50 =</span><span class='discount'>11.20=</span>
+									+b('').products-loader
+										span
+										span
+										span
+										span
+						+b('span').title-1 SISTER’S — КАЧЕСТВЕННАЯ И  ЭФФЕКТНАЯ ОДЕЖДА
+						+b('').hidden-text
+							+e('').wrap
+								p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+								p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+							+e('a').show.arr-bottom Показать полностью
+						+subscribe
+						+widget-social
+
+		.im-popups
+			.im-popup#added
+				.im-popup-inside
+					+b('form').popup.added
+						+e('a').close
+						+b('span').title-1.black Добавлено
+						p Товар <span>Куртка Mz 15 19307<span> успешно добален в корзину.
+						+b('a').btn Вернуться к покупкам
+						+b('a').btn В Корзину
+
+		include partials/footer
+		include inc/vendor-scripts
+		script(src="js/client.min.js")

@@ -1,0 +1,92 @@
+include helpers/bemto
+include helpers/variables
+include helpers/mixins
+
+-bemto_settings_prefix = 'b-'
+
+doctype html
+html
+	head
+		title reviews
+		include inc/head
+	body(class="p-reviews")
+		include partials/top-header
+
+		.l-common-wrap
+			+mobile-menu
+			.l-content-wrap
+				.l-page
+					include partials/header
+					.l-container
+						+breadcrumb
+						+b('').top-box
+							+e('').left
+								+b('span').title-1.black Отзывы
+							+e('').right
+								+b('a')(data-id='#reviews').btn.im-popup-link Написать отзыв
+						+b('').cols-reviews
+							+e('').cols-wrap
+								+e('').col
+									+reviews-item
+								+e('').col
+									+reviews-item
+								+e('').col
+									+reviews-item
+								+e('').col
+									+b('article').reviews
+										+e('').top-box
+											+e('span').name Анастасия
+											+b('').stars
+												+svg-icon('star-cur')
+												+svg-icon('star-cur')
+												+svg-icon('star-cur')
+												+svg-icon('star-cur')
+												+svg-icon('star-cur')
+										+e('').item-inf
+											+e('span').city Могилев
+											+b('span').date 24.12.2016
+										+e('').text-wrap
+											p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.
+											p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.
+								+e('').col
+									+reviews-item
+								+b('').products-loader
+									span
+									span
+									span
+									span
+						+subscribe
+						+widget-social
+
+		.im-popups
+			.im-popup#reviews
+				.im-popup-inside
+					+b('form').popup
+						+e('a').close
+						+b('span').title-1.black Написать отзыв
+						+e('').row
+							+e('').cell
+								+b('input')(type='text' placeholder='Ваше имя').input
+							+e('').cell
+								+b('input')(type='text' placeholder='Город').input
+							+e('').cell
+								+b('').select-rating
+									+e('span').caption Оценка:
+									+e('').wrap
+										+e('a').item.js-act
+										+e('a').item
+										+e('a').item
+										+e('a').item
+										+e('a').item
+						+e('').row
+							+e('').input-cell
+								+b('input')(type='text' placeholder='Контактный телефон').input
+							+e('').input-cell
+								+b('input')(type='text' placeholder='Email').input
+						+b('textarea')(placeholder='Текст отзыва').textarea
+						+e('span').error-msg Укажите ваше имя
+						+b('input')(type='submit' value='Отправить').btn
+						
+		include partials/footer
+		include inc/vendor-scripts
+		script(src="js/client.min.js")

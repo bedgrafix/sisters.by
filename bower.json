@@ -1,0 +1,26 @@
+{
+  "name": "blank-project-website",
+  "description": "blank project for codding",
+  "main": "index.js",
+  "license": "BSD-2-Clause",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "normalize": "./source/stylus/vendor-css/normalize.css",
+    "js-helpers": "https://github.com/aivenreach/js-helpers.git",
+    "owl.carousel": "^2.2.1",
+    "slick-carousel": "^1.6.0",
+    "jquery.viewport": "https://github.com/xobotyi/jquery.viewport.git",
+    "jquery-ui-slider": "./jquery-ui-slider",
+    "fancybox": "^3.0.47",
+    "sisyphus": "^1.1.103"
+  }
+}

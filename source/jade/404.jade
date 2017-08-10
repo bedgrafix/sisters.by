@@ -1,0 +1,29 @@
+include helpers/bemto
+include helpers/variables
+include helpers/mixins
+
+-bemto_settings_prefix = 'b-'
+
+doctype html
+html
+	head
+		title notfound
+		include inc/head
+	body(class="p-notfound")
+
+		.l-common-wrap
+			+b('').v-align
+				+e('').content
+					.l-container
+						+b('').table-not-found
+							+e('').left
+								img(src="../img/404.png")
+							+e('').right
+								img(src='../img/logo-min.png')
+								+b('span').title-1 Не знаем, как вы сюда попали,<br> но такой страницы не существует
+								+e('p').caption Возможно, интересующая вас страница была удалена.<br>Вы можете <a href='#'>перейти на главную</a> или <a href='#'>в каталог</a>
+
+
+
+		include inc/vendor-scripts
+		script(src="js/client.min.js")
